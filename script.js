@@ -1,24 +1,41 @@
+var DarkTheme = false;
+
 function getCurrentHour() {
   const time = new Date();
   return time.getHours();
 }
 
-const CurrentTime = getCurrentHour();
-
-///switch case laga
-
-const footerlines = document.querySelector("#footerlines");
-
-var verticallines = "";
-const widtharr = ["width2px", "width3px", "width4px", "width5px"];
-for (let i = 1; i <= 3; i++) {
-  widtharr.forEach((elem) => {
-    verticallines += `<div class="">
-        <div class="vertical-line ${elem}"></div>
-        <div></div>
-        </div>`;
-  });
+function IsDarkTheme(){
+    const CurrentTime = getCurrentHour();
+    if((CurrentTime>0 && CurrentTime <6) || (CurrentTime>18 && CurrentTime<24)){
+        DarkTheme = true;
+    }
+    return DarkTheme
 }
-footerlines.innerHTML = verticallines;
 
-// 12am 3am 6am 9am 12pm 3pm 6pm 9pm
+IsDarkTheme()
+
+function getOpacityofBar(i){
+    if((i>=0 && i <6) || (i>18 && i<24)){
+        return "nightopacity"
+    }
+    return ""
+}
+
+function createFooterLines(){
+    const footerlines = document.querySelector("#footerlines");
+    var verticallines = "";
+
+    const widtharr = ["width2px", "width3px", "width4px", "width5px"];
+    
+    for (let i = 0; i < 24; i++) {
+            verticallines += `<div class="everybar">
+            <div class="vertical-line ${i>3 ? widtharr[i%3] : widtharr[i]} ${getOpacityofBar(i)}"></div>
+            <div>${i+1}</div>
+            </div>`;
+    }
+    footerlines.innerHTML = verticallines;
+}
+
+createFooterLines()
+

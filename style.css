@@ -179,9 +179,21 @@ footer {
   justify-content: space-around;
 }
 
+.everybar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .vertical-line{
   height: 20px;
   background-color: var(--specialtext);
+}
+
+.everybar:hover .vertical-line{
+  height: 40px;
 }
 
 .width2px{
@@ -198,4 +210,8 @@ footer {
 
 .width5px{
   width: 5px;
+}
+
+.nightopacity{
+opacity: .2;
 }
