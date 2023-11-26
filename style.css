@@ -31,24 +31,51 @@ body {
 }
 
 nav {
+    position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4vh 3vw;
+  padding: 3.5vh 3vw;
   font-family: var(--bodyFont);
+  width: 100%;
 }
 
 nav > ul {
   display: flex;
   gap: 2vw;
+  padding: 1.5vh 2vh;
+  border-radius: 50px;
+  background-color: rgba(35, 56, 49, .7);
 }
 
 nav > ul > li {
   list-style: none;
+  display: flex;
+  align-items: center;
+  font-size: 1.2vw;
+  font-weight: 500;
+  color: rgba(212, 237, 228, 1);
+  padding: 1vh 1vw;
+}
+nav > ul > li>svg{
+    fill: rgba(212, 237, 228, 1);
+}
+
+.active{
+    background-color: rgba(143, 220, 194, 0.1);
+    border-radius: 50px;
 }
 
 #page1{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+    width: 100vw;
+}
+
+#page1>h1{
+    font-family: var(--titleFont);
 }
