@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vivek's Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -29,7 +32,8 @@
           <li>Contact</li>
         </ul>
       </nav>
-      <div id="page1" data-scroll-section>
+
+      <!-- <div id="page1" data-scroll-section>
         <div id="page1-upper">
           <h1>
             Hi. I'm Vivek.<svg
@@ -52,45 +56,52 @@
             with a user-centric approach.
           </p>
         </div>
-      </div>
+      </div> -->
+
       <footer data-scroll-section>
-        <div class="footer-upper">
-          <div class="copyright-panel">
-            &copy; Vivek Gupta 	
-            &#8226; Thane, Maharashtra
+        <div id="footerbundler">
+          <div id="footer-upper">
+            <div id="left-copyright-panel">
+              &copy; Vivek Gupta &#8226; Thane, Maharashtra
+            </div>
+            <div id="right-links-panel">
+              <div id="Pages-panel" class="footertext">
+                <h2>Pages</h2>
+                <ul>
+                  <li>About</li>
+                  <li>Projects</li>
+                  <li>Blog</li>
+                  <li>Contact</li>
+                </ul>
+              </div>
+              <div id="findme-panel" class="footertext">
+                <h2>Find Me</h2>
+                <ul>
+                  <li>Github</li>
+                  <li>LinkedIn</li>
+                  <li>Instagram</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="Pages-panel">
-            <h2>Pages</h2>
-            <ul>
-              <li>About</li>
-              <li>Projects</li>
-              <li>Blog</li>
-              <li>Contact</li>
-            </ul>
-          </div>
-          <div class="findme-panel">
-            <h2>Find Me</h2>
-            <ul>
-              <li>Github</li>
-              <li>LinkedIn</li>
-              <li>Instagram</li>
-              <li>Contact</li>
-            </ul>
+          <div id="footer-lower">
+            <div class="lines">
+                
+            </div>
           </div>
         </div>
-        <div class="footer-lower"></div>
       </footer>
     </div>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const scroll = new LocomotiveScroll({
-                el: document.querySelector('#main'),
-                smooth: true
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        const scroll = new LocomotiveScroll({
+          el: document.querySelector("#main"),
+          smooth: true,
         });
+      });
     </script>
     <script src="script.js"></script>
   </body>
