@@ -177,19 +177,18 @@ footer {
 #scrollarrow {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 2vh;
   position: relative;
+  width: 77vw;
+  background-color: white;
 }
 
-#scrollarrow::before {
-  position: absolute;
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48"><path d="M12 16L6 10H18L12 16Z"></path></svg>');
-
+.downarrowsvg {
   fill: var(--specialtext);
   top: 20%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   pointer-events: none;
+  background-color: red;
+  cursor: pointer;
 }
 
 #myRange {
