@@ -43,3 +43,18 @@ function createFooterLines() {
 }
 
 createFooterLines();
+
+function moveSlider() {
+  const slider = document.getElementById("myRange");
+  const thumbWidth = 48; // Adjust the width of the SVG
+  document.querySelector("#scrollarrow::before").style.left = "0%";
+  slider.addEventListener("input", function () {
+    const rangeValue = this.value;
+    const sliderWidth = this.offsetWidth;
+    const newPosition = (sliderWidth - thumbWidth) * (rangeValue / 24);
+    document.querySelector("#scrollarrow::before").style.left =
+      newPosition + "px";
+  });
+}
+
+moveSlider();
