@@ -36,7 +36,7 @@ function createFooterLines() {
             <div class="vertical-line ${
               i > 3 ? widtharr[i % 3] : widtharr[i]
             } ${getOpacityofBar(i)}"></div>
-            <div>${i + 1}</div>
+            
             </div>`;
   }
   footerlines.innerHTML = verticallines;
@@ -45,9 +45,26 @@ function createFooterLines() {
 createFooterLines();
 
 function moveSlider() {
-  const slider = document.querySelector(".downarrowsvg");
-  slider.addEventListener("mousemove", function (e) {
-    console.log(e);
+  const slider = document.querySelector("#scrollarrow");
+  let isDragging = false;
+
+  slider.addEventListener("mousedown", function () {
+    isDragging = true;
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+  });
+
+  document.addEventListener("mousemove", function (e) {
+    if (isDragging) {
+      const arrowsvg = document.querySelector(".downarrowsvg");
+      const sliderRect = slider.getBoundingClientRect();
+      const mouseX = e.clientX - sliderRect.left;
+      const sliderWidth = sliderRect.width;
+      const newPosition = Math.min(Math.max(mouseX, 0), sliderWidth);
+      arrowsvg.style.left = `${newPosition}px`;
+    }
   });
 }
 
