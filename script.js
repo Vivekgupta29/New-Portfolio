@@ -1,5 +1,19 @@
 var DarkTheme = false;
 
+
+//Cursor Ball Animation
+function cursorBallAnimation(){
+    const cursorball = document.querySelector("#cursorball")
+    window.addEventListener("mousemove",function(e){
+        cursorball.style.top = `${e.clientY}px`;
+        cursorball.style.left = `${e.clientX}px`;
+        console.log(e.clientY)
+    })
+}
+
+cursorBallAnimation()
+
+//get Current Hour
 function getCurrentHour() {
   const time = new Date();
   return time.getHours();
@@ -47,6 +61,18 @@ createFooterLines();
 function moveSlider() {
   const slider = document.querySelector("#scrollarrow");
   let isDragging = false;
+
+  slider.addEventListener("click", function (e) {
+    const arrowsvg = document.querySelector(".downarrowsvg");
+    arrowsvg.style.transitionDuration = "500ms";
+    const sliderRect = slider.getBoundingClientRect();
+    const mouseX = e.clientX - sliderRect.left;
+    const newPosition = mouseX;
+    arrowsvg.style.left = `${newPosition}px`;
+    setTimeout(() => {
+        arrowsvg.style.transitionDuration = "100ms";
+      }, 500);
+  });
 
   slider.addEventListener("mousedown", function () {
     isDragging = true;

@@ -30,6 +30,20 @@ body {
   width: 100%;
 }
 
+#cursorball{
+  position: absolute;
+  z-index: 99999;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: aliceblue;
+  top: 0;
+  left: 0;
+  transform: translate(-50%,-50%);
+  transition: 300ms;
+  
+}
+
 #main {
   position: relative;
   min-height: 100%;
@@ -183,6 +197,7 @@ footer {
   justify-content: center;
   cursor: pointer;
   z-index: 9999;
+  
   /* background-color: aqua; */
 }
 
@@ -191,6 +206,8 @@ footer {
   fill: var(--specialtext);
   transform: translateX(-50%);
   pointer-events: none;
+  transition-duration: 100ms;
+  
 }
 
 #footerlines {
@@ -201,6 +218,12 @@ footer {
   top: 300%;
   left: 0;
   /* background-color: blueviolet; */
+}
+
+.everybar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .vertical-line {
