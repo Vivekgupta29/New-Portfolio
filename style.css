@@ -41,6 +41,7 @@ body {
   left: 0;
   transform: translate(-50%, -50%);
   transition: 300ms;
+  pointer-events: none;
 }
 
 #main {

@@ -1,17 +1,16 @@
 var DarkTheme = false;
 
-
 //Cursor Ball Animation
-function cursorBallAnimation(){
-    const cursorball = document.querySelector("#cursorball")
-    window.addEventListener("mousemove",function(e){
-        cursorball.style.top = `${e.clientY}px`;
-        cursorball.style.left = `${e.clientX}px`;
-        console.log(e.clientY)
-    })
+function cursorBallAnimation() {
+  const cursorball = document.querySelector("#cursorball");
+  window.addEventListener("mousemove", function (e) {
+    cursorball.style.top = `${e.clientY}px`;
+    cursorball.style.left = `${e.clientX}px`;
+    console.log(e.clientY);
+  });
 }
 
-cursorBallAnimation()
+cursorBallAnimation();
 
 //get Current Hour
 function getCurrentHour() {
@@ -70,8 +69,8 @@ function moveSlider() {
     const newPosition = mouseX;
     arrowsvg.style.left = `${newPosition}px`;
     setTimeout(() => {
-        arrowsvg.style.transitionDuration = "100ms";
-      }, 500);
+      arrowsvg.style.transitionDuration = "100ms";
+    }, 500);
   });
 
   slider.addEventListener("mousedown", function () {
