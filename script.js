@@ -10,7 +10,7 @@ function cursorBallAnimation() {
   });
 }
 
-cursorBallAnimation();
+// cursorBallAnimation();
 
 //get Current Hour
 function getCurrentHour() {
@@ -94,3 +94,50 @@ function moveSlider() {
 }
 
 moveSlider();
+
+function changeActive() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll("nav ul li a");
+    const navList = document.querySelector("nav ul");
+
+    navLinks.forEach((link, index) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        // const targetId = this.getAttribute("href").substring(1);
+        // const targetSection = document.getElementById(targetId);
+
+        // window.scrollTo({
+        //   top: targetSection.offsetTop,
+        //   behavior: "smooth",
+        // });
+
+        // Update active class
+        document.querySelector("nav ul li.active").classList.remove("active");
+        this.parentElement.classList.add("active");
+
+        // Update the sliding background position
+        const activeElement = document.querySelector("nav ul li.active");
+        const activeRect = activeElement.getBoundingClientRect();
+        const navRect = navList.getBoundingClientRect();
+        const offsetLeft = activeRect.left - navRect.left;
+        const offsetWidth = activeRect.width;
+
+        navList.style.setProperty("--active-left", `${offsetLeft}px`);
+        navList.style.setProperty("--active-width", `${offsetWidth}px`);
+      });
+    });
+
+    // Initialize the sliding background position
+    const initActiveElement = document.querySelector("nav ul li.active");
+    if (initActiveElement) {
+      const initActiveRect = initActiveElement.getBoundingClientRect();
+      const navRect = navList.getBoundingClientRect();
+      const initOffsetLeft = initActiveRect.left - navRect.left;
+      const initOffsetWidth = initActiveRect.width;
+
+      navList.style.setProperty("--active-left", `${initOffsetLeft}px`);
+      navList.style.setProperty("--active-width", `${initOffsetWidth}px`);
+    }
+  });
+}
+changeActive();
